@@ -1,4 +1,4 @@
-FROM postgres:12
+FROM postgres:14
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
 	apt-get update  -qq && \
