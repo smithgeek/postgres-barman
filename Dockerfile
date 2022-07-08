@@ -13,7 +13,7 @@ COPY backup_scripts/list.sh /backup_scripts/list.sh
 COPY backup_scripts/configure_wal.sh /backup_scripts/configure_wal.sh
 
 RUN chmod 0644 /etc/cron.d/postgres-crontab && crontab /etc/cron.d/postgres-crontab
-RUN chmod +x /backup_scripts/backup.sh /backup_scripts/restore.sh /backup_scripts/list.sh /backup_scripts/configure_wal.sh
+RUN chmod +x /backup_scripts/backup.sh /backup_scripts/restore.sh /backup_scripts/list.sh /backup_scripts/configure_wal.sh /startup.sh /docker-entrypoint-initdb.d/initdb.sh
 RUN sed -i '/imklog/s/^/#/' /etc/rsyslog.conf
 
 ENTRYPOINT ["/startup.sh"]
